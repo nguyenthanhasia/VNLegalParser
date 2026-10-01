@@ -15,10 +15,30 @@ def read_text_file(path: str | Path) -> str:
     if suffix in {".html", ".htm"}:
         return html_to_text(p.read_text(encoding="utf-8", errors="replace"))
     if suffix == ".pdf":
+        # Prefer PyMuPDF: on real Vietnamese Công báo PDFs it preserves Vietnamese words and
+        # reading order more reliably than pypdf. Keep pypdf as a compatibility fallback.
+        try:
+            import pymupdf  # type: ignore
+        except ImportError:
+            try:
+                import fitz as pymupdf  # type: ignore  # legacy import name
+            except ImportError:
+                pymupdf = None
+
+        if pymupdf is not None:
+            doc = pymupdf.open(str(p))
+            try:
+                return "\n".join(page.get_text("text") or "" for page in doc)
+            finally:
+                doc.close()
+
         try:
             from pypdf import PdfReader  # type: ignore
         except ImportError as exc:  # pragma: no cover - optional dependency
-            raise RuntimeError("PDF support requires: pip install 'vietnamese-legal-parser[pdf]'") from exc
+            raise RuntimeError(
+                "PDF support requires PyMuPDF (recommended) or pypdf. "
+                "Install: pip install 'vietnamese-legal-parser[pdf]'"
+            ) from exc
         reader = PdfReader(str(p))
         return "\n".join(page.extract_text() or "" for page in reader.pages)
     if suffix == ".docx":

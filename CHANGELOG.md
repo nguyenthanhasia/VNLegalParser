@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0
+
+- Prefer PyMuPDF for PDF ingestion, with pypdf compatibility fallback.
+- Repair a conservative set of PDF-split Vietnamese legal cue words such as `c ủa Lu ật`.
+- Reject wrapped citation-list markers such as `Điều 112, khoản 1 Điều 113...` and `Mục 3, 4 và 5 Chương này...`.
+- Add regressions derived from a 93-page Công báo PDF of Luật Nhà ở 27/2023/QH15.
+- Preserve reciprocal GitHub ↔ Hugging Face Space links in release metadata and docs.
+
 ## 0.6.0
 
 - Added partial-line boundary reconstruction for PDF/OCR extraction where only some legal boundaries are lost.

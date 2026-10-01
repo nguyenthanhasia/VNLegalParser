@@ -14,7 +14,7 @@ from .context import classify_marker
 from .sequence import transition
 from .validation import confidence_score, validate_structure
 
-__version__ = "0.6.0"
+__version__ = "0.7.0"
 
 LEVELS = {
     "part": 0,

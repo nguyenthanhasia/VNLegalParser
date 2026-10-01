@@ -76,6 +76,13 @@ _REFERENCE_REST_RE = re.compile(
     r")"
 )
 
+_CITATION_CONTINUATION_RE = re.compile(
+    r"(?ix)^\s*[,;]\s*(?:"
+    r"khoản|khoan|điểm|diem|Điều|Dieu|Chương|Chuong|Mục|Muc|Phụ\s+lục|Phu\s+luc|"
+    r"\d+\s*(?:,|và|va)"
+    r")\b"
+)
+
 
 def looks_like_structural_reference(marker: Marker) -> bool:
     """Detect a line-start legal citation instead of a structural heading.
@@ -85,9 +92,15 @@ def looks_like_structural_reference(marker: Marker) -> bool:
     """
     if marker.element_type not in {"part", "chapter", "section", "subsection", "division", "article"}:
         return False
+    rest = marker.rest or ""
+    # Citation lists often wrap at the page margin and start a physical line with e.g.
+    # `Điều 112, khoản 1 Điều 113 ...`.  The comma/semicolon continuation is stronger evidence
+    # of a reference than of a structural heading.
+    if _CITATION_CONTINUATION_RE.match(rest):
+        return True
     if marker_delimiter(marker) in {".", ":"}:
         return False
-    return bool(_REFERENCE_REST_RE.match(marker.rest or ""))
+    return bool(_REFERENCE_REST_RE.match(rest))
 
 
 def _point_sequence_evidence(

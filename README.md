@@ -2,8 +2,8 @@
 
 **Robust, deterministic parsing infrastructure for Vietnamese law.**
 
-**Live Demo:** [https://huggingface.co/spaces/nguyenthanhasia/VNLegalParser](https://huggingface.co/spaces/nguyenthanhasia/VNLegalParser)  
-**Source Code:** [https://github.com/nguyenthanhasia/VNLegalParser](https://github.com/nguyenthanhasia/VNLegalParser)
+**Live Demo:** https://huggingface.co/spaces/nguyenthanhasia/VNLegalParser  
+**Source Code:** https://github.com/nguyenthanhasia/VNLegalParser
 
 A dependency-light parser for Vietnamese legal documents. It converts raw Vietnamese legal text into a hierarchical JSON tree suitable for search, RAG, citation, analytics, and downstream legal NLP.
 
@@ -82,6 +82,13 @@ pip install -e '.[pdf]'
 pip install -e '.[docx]'
 pip install -e '.[all]'
 ```
+
+
+### PDF ingestion
+
+For PDFs, VNLegalParser v0.7.0 prefers **PyMuPDF** and keeps `pypdf` as a compatibility fallback. The normalization layer also repairs a deliberately small set of extractor-split Vietnamese legal cue words such as `c ủa Lu ật`, and the contextual classifier rejects wrapped citation-list lines such as `Điều 112, khoản 1 Điều 113...` or `Mục 3, 4 và 5 Chương này...`.
+
+This change was regression-tested against a 93-page Công báo PDF of Luật Nhà ở 27/2023/QH15: the parser recovered a monotonic Article 1→117 sequence without promoting wrapped references into Articles. PDF reading-order/OCR corruption can still require review.
 
 ## Python API
 
@@ -175,7 +182,7 @@ Every structural node contains:
 }
 ```
 
-`parse_document()` additionally returns `annex_blocks` plus parser provenance. Annex blocks are raw attachment tails and are not structurally parsed in v0.6.0:
+`parse_document()` additionally returns `annex_blocks` plus parser provenance. Annex blocks are raw attachment tails and are not structurally parsed in v0.7.0:
 
 ```json
 {
@@ -199,7 +206,7 @@ Parser provenance includes a SHA-256 hash of the exact input content:
 {
   "parser": {
     "name": "vietnamese-legal-parser",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "source_content_sha256": "<64 lowercase hex characters>",
     "confidence": 0.92,
     "diagnostics": [],
@@ -273,7 +280,7 @@ It is also a structural parser, not legal interpretation, legal advice, named-en
 
 Every parser bug should become a regression test. Every new relaxed recognition rule should include a negative test proving it does not introduce a common false positive.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [schema/v0.6.0.json](schema/v0.6.0.json), [CONTRIBUTING.md](CONTRIBUTING.md), and [CHANGELOG.md](CHANGELOG.md).
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [schema/v0.7.0.json](schema/v0.7.0.json), [CONTRIBUTING.md](CONTRIBUTING.md), and [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

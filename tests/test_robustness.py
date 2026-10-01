@@ -328,3 +328,38 @@ a) Điểm lặp."""
     out = parse_structure(text, include_diagnostics=True)
     ids = [n["element_id"] for n in walk(out["structure"])]
     assert len(ids) == len(set(ids))
+
+
+def test_wrapped_citation_lists_do_not_become_major_structure():
+    text = """Chương IV
+Mục 1
+Điều 35. Chủ đầu tư
+1. Nội dung.
+b) Tổ chức đầu tư xây dựng nhà ở bằng nguồn vốn quy định tại khoản 5
+Điều 112, khoản 1 Điều 113 của Luật này và đáp ứng điều kiện quy định tại
+khoản 3 Điều này.
+2. Nội dung tiếp theo.
+Chương VI
+Mục 1
+Điều 76. Đối tượng
+1. Nội dung.
+Mục 3, 4 và 5 Chương này có quy định dẫn chiếu áp dụng quy định tại Mục 2
+của Chương này.
+Mục 2
+PHÁT TRIỂN NHÀ Ở XÃ HỘI
+Điều 77. Hình thức
+1. Nội dung."""
+    assert nums(text, "article") == ["35", "76", "77"]
+    assert nums(text, "section") == ["1", "1", "2"]
+    assert nums(text, "clause") == ["1", "2", "1", "1"]
+
+
+def test_pdf_split_legal_cues_are_repaired_before_context_classification():
+    text = """Điều 11. Nghĩa vụ
+1. Nội dung.
+Điều 165 c ủa Lu ật này thì áp dụng trong trường hợp khác.
+2. Nội dung tiếp theo.
+Điều 12. Thời điểm
+1. Nội dung."""
+    assert nums(text, "article") == ["11", "12"]
+    assert nums(text, "clause") == ["1", "2", "1"]

@@ -1,16 +1,20 @@
-# Release validation — v0.6.0
+# Release validation — v0.7.0
 
-- `pytest -q`: 62 passed.
-- Source-linked regression corpus: 23/23.
-- Adversarial false-positive suite: 2,400/2,400.
-- Generated legal grammar: 3,000/3,000.
-- Extraction mutation suite: 4,200/4,200 across 21 source-linked non-annex cases.
-- Contextual boundary/disambiguation suite: 1,600/1,600.
-- Crash + unique-ID fuzz: 5,000/5,000.
-- Large-document smoke: 10,000 Articles, 100,001 nodes, ~2.54M chars, zero diagnostics, ~8.52 s in the release environment.
-- Annex-tail behavior remains opt-out parsing: first structural annex boundary is returned in `annex_blocks` with `parsed=false`.
-- Confidence remains a heuristic quality signal and is lightly penalized when partial boundary reconstruction is required.
+## Gates
 
-See `CONTEXTUAL_BENCHMARK_v0.6.0.md` for interpretation and limitations.
-- Wheel built with `pip wheel --no-build-isolation --no-deps` and installed into a fresh virtualenv.
-- Fresh-venv smoke: `vlp --version` => `0.6.0`; inline point reconstruction and annex isolation both verified.
+- `pytest`: **65 / 65 passed**.
+- Sequence/adversarial benchmark: **2,400 / 2,400 passed**.
+- Generated legal grammar: **3,000 / 3,000 passed**.
+- Contextual targeted benchmark: **1,600 / 1,600 passed**.
+- Crash + unique-ID fuzz: **5,000 / 5,000 passed**.
+- Real PDF smoke: `luat27.pdf` (93-page Công báo extract, Luật Nhà ở 27/2023/QH15) parsed with PyMuPDF-preferred ingestion into **7 chapters, 20 sections, 117 articles, 497 clauses, 390 points**. The Article sequence is exactly **1..117**; wrapped citation-list false Articles found in v0.6.0 are rejected as references.
+- All diagnostics on that PDF are informational reference rejections; no article/section sequence anomaly remains.
+
+## Important limitation
+
+These gates validate the current regression/stress distributions. They do **not** establish universal 100% accuracy on arbitrary OCR, malformed PDFs, missing pages, or multi-column reading-order corruption. Confidence remains a heuristic quality signal.
+
+## Packaging smoke
+
+- Built `vietnamese_legal_parser-0.7.0-py3-none-any.whl` with `pip wheel --no-build-isolation --no-deps`.
+- Installed the wheel into a fresh virtual environment; `vlp --version` returned `0.7.0` and a basic parse succeeded.

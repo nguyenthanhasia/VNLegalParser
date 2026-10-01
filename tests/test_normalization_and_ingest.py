@@ -67,3 +67,9 @@ def test_docx_ingestion_preserves_tables_without_promoting_row_numbers(tmp_path)
     out = parse_structure(extracted)
     clauses = [n["number"] for n in _walk(out) if n["element_type"] == "clause"]
     assert clauses == ["1"]
+
+
+def test_pdf_split_legal_cue_normalization_is_conservative():
+    text = normalize_text("Điều 165 c ủa Lu ật này; kho ản 1 Đi ều 5.")
+    assert "của luật" in text.lower()
+    assert "khoản 1 điều 5" in text.lower()

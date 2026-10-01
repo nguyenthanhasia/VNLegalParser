@@ -114,6 +114,38 @@ def looks_like_html(value: str) -> bool:
     return bool(re.search(r"<(?:html|body|div|p|table|br|span|h[1-6])\b", head))
 
 
+_PDF_SPLIT_LEGAL_CUES = (
+    (re.compile(r"(?iu)\bc\s+ủa\b"), "của"),
+    (re.compile(r"(?iu)\blu\s+ật\b"), "luật"),
+    (re.compile(r"(?iu)\bđi\s+ều\b"), "điều"),
+    (re.compile(r"(?iu)\bkho\s+ản\b"), "khoản"),
+    (re.compile(r"(?iu)\bđi\s+ểm\b"), "điểm"),
+    (re.compile(r"(?iu)\bch\s+ương\b"), "chương"),
+    (re.compile(r"(?iu)\bm\s+ục\b"), "mục"),
+)
+
+
+def _repair_pdf_split_legal_cues(value: str) -> str:
+    """Repair conservative PDF extraction splits inside high-value Vietnamese legal cue words.
+
+    Some PDF text extractors emit forms such as ``c ủa Lu ật``.  The repair is deliberately
+    limited to legal cue words used by the contextual classifier, avoiding broad word-joining
+    heuristics that could corrupt legitimate prose.
+    """
+    def repl(match: re.Match[str], replacement: str) -> str:
+        compact = re.sub(r"\s+", "", match.group(0))
+        letters = "".join(ch for ch in compact if ch.isalpha())
+        if letters and letters.isupper():
+            return replacement.upper()
+        if compact[:1].isupper():
+            return replacement[:1].upper() + replacement[1:]
+        return replacement
+
+    for rx, replacement in _PDF_SPLIT_LEGAL_CUES:
+        value = rx.sub(lambda m, word=replacement: repl(m, word), value)
+    return value
+
+
 def normalize_text(text: str | None, *, detect_html: bool = True) -> str:
     """Normalize text without destroying legal structure.
 
@@ -134,6 +166,7 @@ def normalize_text(text: str | None, *, detect_html: bool = True) -> str:
     value = value.replace("\r\n", "\n").replace("\r", "\n")
     value = value.replace("\u201c", "“").replace("\u201d", "”")
     value = value.replace("\u2018", "‘").replace("\u2019", "’")
+    value = _repair_pdf_split_legal_cues(value)
 
     # Remove Markdown heading/list decoration while keeping the text itself.
     value = re.sub(r"(?m)^\s{0,3}#{1,6}\s+", "", value)
