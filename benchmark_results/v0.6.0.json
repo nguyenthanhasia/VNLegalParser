@@ -1,0 +1,32 @@
+{
+  "version": "0.6.0",
+  "pytest": {"passed": 62, "total": 62},
+  "source_linked_regression": {"passed": 23, "total": 23},
+  "adversarial_false_positive": {"passed": 2400, "total": 2400},
+  "generated_legal_grammar": {"passed": 3000, "total": 3000},
+  "extraction_mutations": {
+    "passed": 4200,
+    "total": 4200,
+    "source_cases": 21,
+    "per_category": {
+      "whitespace": [525, 525],
+      "unicode": [525, 525],
+      "html_wrapped": [525, 525],
+      "markdown_noise": [525, 525],
+      "marker_case_punct": [525, 525],
+      "flattened": [525, 525],
+      "partial_line_loss": [525, 525],
+      "mixed": [525, 525]
+    }
+  },
+  "contextual_suite": {"passed": 1600, "total": 1600},
+  "crash_unique_id_fuzz": {"passed": 5000, "total": 5000},
+  "large_document_smoke": {
+    "articles": 10000,
+    "nodes": 100001,
+    "characters": 2544499,
+    "diagnostics": 0,
+    "elapsed_seconds_release_environment": 8.5223
+  },
+  "notes": "Regression/stress metrics, not a universal population accuracy estimate."
+}

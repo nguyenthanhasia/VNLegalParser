@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vietnamese Legal Parser v0.6.0 document output",
+  "type": "object",
+  "required": [
+    "document",
+    "structure",
+    "annex_blocks",
+    "cross_references",
+    "parser"
+  ],
+  "properties": {
+    "document": {
+      "type": "object",
+      "required": [
+        "document_id",
+        "title",
+        "document_type",
+        "document_number",
+        "jurisdiction",
+        "language",
+        "dates",
+        "source_url"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "document_type": {
+          "type": "string"
+        },
+        "document_number": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "issuing_authority": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "dates": {
+          "type": "object",
+          "properties": {
+            "enactment": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "effective": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "expiry": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "last_amended": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "consolidation": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "classification": {
+          "type": "object"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "version_history": {
+          "type": "array"
+        },
+        "related_documents": {
+          "type": "array"
+        },
+        "source_metadata": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "structure": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "annex_blocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/annexBlock"
+      }
+    },
+    "cross_references": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "parser": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "source_content_sha256",
+        "confidence",
+        "diagnostics",
+        "stats"
+      ],
+      "properties": {
+        "name": {
+          "const": "vietnamese-legal-parser"
+        },
+        "version": {
+          "type": "string"
+        },
+        "source_content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/diagnostic"
+          }
+        },
+        "stats": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "diagnostic": {
+      "type": "object",
+      "required": [
+        "code",
+        "message",
+        "severity"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "line_no": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "element_id",
+        "element_type",
+        "number",
+        "title",
+        "content",
+        "children",
+        "cross_references",
+        "metadata"
+      ],
+      "properties": {
+        "element_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "element_type": {
+          "enum": [
+            "preamble",
+            "part",
+            "chapter",
+            "section",
+            "subsection",
+            "division",
+            "annex",
+            "article",
+            "clause",
+            "point"
+          ]
+        },
+        "number": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "object",
+          "required": [
+            "raw_text",
+            "normalized_text",
+            "provisions"
+          ],
+          "properties": {
+            "raw_text": {
+              "type": "string"
+            },
+            "normalized_text": {
+              "type": "string"
+            },
+            "provisions": {
+              "type": "array"
+            }
+          },
+          "additionalProperties": true
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        },
+        "cross_references": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metadata": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "annexBlock": {
+      "type": "object",
+      "required": [
+        "index",
+        "number",
+        "heading",
+        "raw_text",
+        "normalized_text",
+        "start_line",
+        "parsed"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "number": {
+          "type": "string"
+        },
+        "heading": {
+          "type": "string"
+        },
+        "raw_text": {
+          "type": "string"
+        },
+        "normalized_text": {
+          "type": "string"
+        },
+        "start_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "parsed": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

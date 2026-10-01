@@ -1,0 +1,493 @@
+[
+  {
+    "id": "decree_13_2023_year_guard",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=161106",
+    "content": "Chương I\nNHỮNG QUY ĐỊNH CHUNG\nĐiều 43. Hiệu lực thi hành\n1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2023.\n2. Các doanh nghiệp siêu nhỏ được quyền lựa chọn miễn trừ trong thời gian 02 năm đầu.",
+    "expect": {
+      "article": [
+        "43"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "forbid_clause": [
+        "2023"
+      ]
+    }
+  },
+  {
+    "id": "civil_code_part_chapter",
+    "source_url": "https://vbpl.vn/botaichinh/Pages/vbpq-toanvan.aspx?ItemID=95942",
+    "content": "Phần thứ nhất\nQUY ĐỊNH CHUNG\nChương I\nNHỮNG QUY ĐỊNH CHUNG\nĐiều 1. Phạm vi điều chỉnh\nBộ luật này quy định địa vị pháp lý của cá nhân, pháp nhân.\nĐiều 2. Công nhận, tôn trọng, bảo vệ và bảo đảm quyền dân sự\n1. Các quyền dân sự được công nhận, tôn trọng, bảo vệ và bảo đảm.",
+    "expect": {
+      "part": [
+        "thứ nhất"
+      ],
+      "chapter": [
+        "I"
+      ],
+      "article": [
+        "1",
+        "2"
+      ],
+      "clause": [
+        "1"
+      ]
+    }
+  },
+  {
+    "id": "flattened_decree_inline",
+    "source_url": "https://vbpl.vn/bongoaigiao/Pages/vbpq-print.aspx?ItemID=8308",
+    "content": "NGHỊ ĐỊNH. Chương I NHỮNG QUY ĐỊNH CHUNG Điều 1. Văn bản quy phạm pháp luật 1. Văn bản có đầy đủ các yếu tố sau đây: a) Do cơ quan có thẩm quyền ban hành; b) Ban hành đúng thủ tục; c) Có quy tắc xử sự chung; d) Được Nhà nước bảo đảm thi hành. 2. Văn bản không có đủ các yếu tố nêu trên không thuộc trường hợp này.",
+    "expect": {
+      "chapter": [
+        "I"
+      ],
+      "article": [
+        "1"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "point": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    }
+  },
+  {
+    "id": "resolution_chuong_trinh_false_positive",
+    "source_url": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/177756/VanBanGoc_2025_685%20%2B%20686_77-2025-UBTVQH15..pdf",
+    "content": "NGHỊ QUYẾT Điều chỉnh Chương trình lập pháp năm 2025. QUYẾT NGHỊ: Điều 1. Điều chỉnh Chương trình lập pháp năm 2025 1. Đưa ra khỏi Chương trình lập pháp năm 2025 đối với các dự án: a) Luật thứ nhất; b) Luật thứ hai; c) Nghị quyết liên quan.",
+    "expect": {
+      "chapter": [],
+      "article": [
+        "1"
+      ],
+      "clause": [
+        "1"
+      ],
+      "point": [
+        "a",
+        "b",
+        "c"
+      ],
+      "forbid_clause": [
+        "2025"
+      ]
+    }
+  },
+  {
+    "id": "article_suffix_and_vietnamese_dd",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=154221",
+    "content": "Điều 1a. Đối tượng áp dụng\n1. Nghị định này áp dụng đối với tổ chức, cá nhân.\n2. Tổ chức quy định tại khoản 1 Điều này gồm:\na) Cơ quan nhà nước;\nb) Doanh nghiệp;\nc) Tổ hợp tác;\nd) Đơn vị sự nghiệp;\nđ) Tổ chức xã hội.",
+    "expect": {
+      "article": [
+        "1a"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "point": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "đ"
+      ]
+    }
+  },
+  {
+    "id": "chapter_section_subsection",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=125276",
+    "content": "Chương III\nKỸ THUẬT TRÌNH BÀY VĂN BẢN\nMục 1\nKỸ THUẬT TRÌNH BÀY NỘI DUNG VĂN BẢN\nTiểu mục 1\nQUY ĐỊNH CHUNG VỀ TRÌNH BÀY NỘI DUNG VĂN BẢN\nĐiều 17. Trình bày bố cục của văn bản\n1. Việc sắp xếp các quy định phải bảo đảm nguyên tắc sau đây:\na) Quy định chung được trình bày trước quy định cụ thể;\nđ) Quy định chung được trình bày trước quy định ngoại lệ.",
+    "expect": {
+      "chapter": [
+        "III"
+      ],
+      "section": [
+        "1"
+      ],
+      "subsection": [
+        "1"
+      ],
+      "article": [
+        "17"
+      ],
+      "clause": [
+        "1"
+      ],
+      "point": [
+        "a",
+        "đ"
+      ]
+    }
+  },
+  {
+    "id": "multiline_amendment_quote",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=154221",
+    "content": "Điều 3. Sửa đổi, bổ sung một số điều\n1. Bổ sung Điều 1a vào sau Điều 1 như sau:\n“Điều 1a. Đối tượng áp dụng\n1. Tổ chức, cá nhân Việt Nam thực hiện hành vi theo quy định.\na) Cơ quan nhà nước;\nđ) Tổ chức xã hội.”.\n2. Bãi bỏ khoản 2 Điều 4.",
+    "expect": {
+      "article": [
+        "3"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "forbid_article": [
+        "1a"
+      ],
+      "point": []
+    }
+  },
+  {
+    "id": "pdf_wrapped_lines",
+    "source_url": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/136042/VanBanGoc_Lu%E1%BA%ADt%20GD%2043-2019-QH14..pdf",
+    "content": "Chương II\nHỆ THỐNG GIÁO DỤC QUỐC DÂN\nMục 1\nCÁC CẤP HỌC VÀ TRÌNH ĐỘ ĐÀO TẠO\nTiểu mục 1\nGIÁO DỤC MẦM NON\nĐiều 23. Vị trí, vai trò và mục tiêu của giáo dục mầm non\n1. Giáo dục mầm non là cấp học đầu tiên trong hệ thống giáo dục quốc dân, đặt\nnền móng cho sự phát triển toàn diện con người Việt Nam.\n2. Giáo dục mầm non nhằm phát triển toàn diện trẻ em về thể chất, tình cảm,\ntrí tuệ, thẩm mỹ.",
+    "expect": {
+      "chapter": [
+        "II"
+      ],
+      "section": [
+        "1"
+      ],
+      "subsection": [
+        "1"
+      ],
+      "article": [
+        "23"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  {
+    "id": "no_space_between_sentences_and_articles",
+    "source_url": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/170116/VanBanGoc_N%C4%90%20120.pdf",
+    "content": "Điều 3. Trách nhiệm tổ chức thực hiện1. Bộ trưởng tổ chức thực hiện Nghị định này.2. Các cơ quan có liên quan chịu trách nhiệm thi hành Nghị định này.Điều 4. Quy định chuyển tiếpDoanh nghiệp đã nộp hồ sơ trước ngày có hiệu lực thì tiếp tục thực hiện theo quy định.Điều 5. Điều khoản thi hành1. Nghị định này có hiệu lực thi hành từ ngày 15 tháng 11 năm 2024.",
+    "expect": {
+      "article": [
+        "3",
+        "4",
+        "5"
+      ],
+      "clause": [
+        "1",
+        "2",
+        "1"
+      ],
+      "forbid_clause": [
+        "2024"
+      ]
+    }
+  },
+  {
+    "id": "annex_reference_not_annex",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=187685",
+    "content": "Điều 5. Sửa đổi, bổ sung một số nội dung của các Phụ lục\n1. Thay thế cụm từ trong danh mục mẫu văn bản.\nPhụ lục I ban hành kèm theo Thông tư này được viện dẫn trong nội dung khoản.\n2. Bãi bỏ mẫu số 02 Phụ lục III ban hành kèm theo Thông tư.",
+    "expect": {
+      "article": [
+        "5"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "annex": []
+    }
+  },
+  {
+    "id": "actual_annex_heading",
+    "source_url": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/175618/VanBanGoc_PL%20TT%2012-TT-BCA.%202025.pdf",
+    "content": "PHỤ LỤC I\n(Ban hành kèm theo Thông tư số 12/2025/TT-BCA)\nMẫu số 04\nQUYẾT ĐỊNH\nĐiều 1. Cho phép tổ chức kỳ sát hạch lái xe.\nĐiều 2. Quyết định này có hiệu lực kể từ ngày ký.",
+    "expect": {
+      "annex": [],
+      "article": [],
+      "annex_block": [
+        "I"
+      ]
+    }
+  },
+  {
+    "id": "html_source",
+    "source_url": "internal://synthetic/html-normalization",
+    "content": "<html><body><h2>Chương I</h2><p>QUY ĐỊNH CHUNG</p><h3>Điều 1. Phạm vi</h3><p>1. Nội dung thứ nhất.</p><p>2. Nội dung thứ hai.</p></body></html>",
+    "expect": {
+      "chapter": [
+        "I"
+      ],
+      "article": [
+        "1"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  {
+    "id": "cross_reference",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=136305",
+    "content": "Điều 10. Viện dẫn\n1. Thực hiện theo điểm b khoản 5 Điều 111 của Luật và khoản 1 Điều 15 của văn bản liên quan.\n2. Không áp dụng Điều 20 trong trường hợp đặc biệt.",
+    "expect": {
+      "article": [
+        "10"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "min_cross_references": 3
+    }
+  },
+  {
+    "id": "markdown_headings",
+    "source_url": "internal://synthetic/markdown-normalization",
+    "content": "# Chương III\n# ĐIỀU TRA VÀ RÀ SOÁT\n## Mục 1\n## QUY TRÌNH\n### Tiểu mục 1\nHỒ SƠ YÊU CẦU\nĐiều 63. Hồ sơ yêu cầu\n1. Tên, địa chỉ của tổ chức.\n2. Thông tin, số liệu, chứng cứ.",
+    "expect": {
+      "chapter": [
+        "III"
+      ],
+      "section": [
+        "1"
+      ],
+      "subsection": [
+        "1"
+      ],
+      "article": [
+        "63"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  {
+    "id": "sac_lenh_51_1946_historical_ordinals",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=689",
+    "content": "Điều thứ 1: Trong toàn cõi Việt Nam các toà án Việt Nam có thẩm quyền theo quy định.\nĐiều thứ 2: Thẩm quyền các toà án được ấn định như sau:\nChương thứ nhất\nTHẨM QUYỀN CÁC TOÀ ÁN\nTIẾT THỨ NHẤT - BAN TƯ PHÁP XÃ\nĐiều thứ 3: Thẩm quyền ban tư pháp xã được quy định trong văn bản.",
+    "expect": {
+      "chapter": [
+        "thứ nhất"
+      ],
+      "division": [
+        "thứ nhất"
+      ],
+      "article": [
+        "thứ 1",
+        "thứ 2",
+        "thứ 3"
+      ]
+    }
+  },
+  {
+    "id": "constitution_1946_letter_section",
+    "source_url": "https://vbpl.vn/bovanhoathethao/Pages/vbpq-toanvan.aspx?ItemID=535",
+    "content": "Chương I\nCHÍNH THỂ\nĐiều thứ 1\nNước Việt Nam là một nước dân chủ cộng hoà.\nChương II\nNGHĨA VỤ VÀ QUYỀN LỢI CÔNG DÂN\nMục A\nNGHĨA VỤ\nĐiều thứ 4:\nMỗi công dân Việt Nam phải tuân theo pháp luật.",
+    "expect": {
+      "chapter": [
+        "I",
+        "II"
+      ],
+      "section": [
+        "A"
+      ],
+      "article": [
+        "thứ 1",
+        "thứ 4"
+      ]
+    }
+  },
+  {
+    "id": "degraded_pdf_ascii_markers",
+    "source_url": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/159010/VanBanGoc_130-nd.pdf",
+    "content": "CHUONG I\nQUY DINH CHUNG\nDIEU 1. Pham vi dieu chinh\n1. Noi dung thu nhat.\na) Diem thu nhat.\nb) Diem thu hai.\nDIEU 2. Hieu luc thi hanh\n1. Nghi dinh co hieu luc ke tu ngay ky.",
+    "expect": {
+      "chapter": [
+        "I"
+      ],
+      "article": [
+        "1",
+        "2"
+      ],
+      "clause": [
+        "1",
+        "1"
+      ],
+      "point": [
+        "a",
+        "b"
+      ]
+    }
+  },
+  {
+    "id": "circular_66_2025_current_amendment",
+    "source_url": "https://vbpl.vn/bocongthuong/Pages/vbpq-toanvan.aspx?ItemID=185654",
+    "content": "Điều 1. Sửa đổi, bổ sung một số điều\n1. Sửa đổi, bổ sung một số khoản của Điều 3 như sau:\na) Sửa đổi khoản 2 như sau:\n“2. Bên mời quan tâm là cơ quan, tổ chức theo quy định.”.\nb) Bãi bỏ khoản 3.\n2. Sửa đổi, bổ sung một số khoản của Điều 4 như sau:\na) Bổ sung khoản 2a vào sau khoản 2 như sau:\n“2a. Đối với dự án áp dụng quy trình chỉ định nhà đầu tư rút gọn thì thực hiện theo quy định.”.\nb) Sửa đổi khoản 3.\nĐiều 2. Điều khoản thi hành\n1. Thông tư này có hiệu lực thi hành từ ngày 15 tháng 01 năm 2026.\n2. Dự án đã phê duyệt hồ sơ thì được rà soát theo quy định.\n3. Trường hợp đã phát hành hồ sơ thì tiếp tục thực hiện theo quy định.",
+    "expect": {
+      "article": [
+        "1",
+        "2"
+      ],
+      "clause": [
+        "1",
+        "2",
+        "1",
+        "2",
+        "3"
+      ],
+      "point": [
+        "a",
+        "b",
+        "a",
+        "b"
+      ],
+      "forbid_clause": [
+        "2a",
+        "2026"
+      ]
+    }
+  },
+  {
+    "id": "decree_54_2026_quoted_point_a1",
+    "source_url": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/186852/VanBanGoc_54_2026_ND-CP_09022026_1-signed.pdf",
+    "content": "Điều 35. Sửa đổi, bổ sung Điều 39\nSửa đổi, bổ sung Điều 39 như sau:\na) Sửa đổi, bổ sung khoản 1 như sau:\n“1. Trường hợp bán lại nhà ở xã hội thì thực hiện theo quy định.”\nb) Bổ sung khoản 3 như sau:\n“3. Trường hợp bên bán lại nhà ở xã hội chưa thực hiện thủ tục thanh lý thì thực hiện thủ tục theo quy định.”\nĐiều 36. Sửa đổi, bổ sung Điều 48\nBổ sung điểm a1 sau điểm a khoản 2 như sau:\n“a1) Trong thời hạn 07 ngày, kể từ ngày nhận được giấy xác nhận thì thực hiện thủ tục theo quy định.”",
+    "expect": {
+      "article": [
+        "35",
+        "36"
+      ],
+      "clause": [],
+      "point": [
+        "a",
+        "b"
+      ],
+      "forbid_clause": [
+        "1",
+        "3"
+      ]
+    }
+  },
+  {
+    "id": "decree_95_2024_reference_dense",
+    "source_url": "https://vbpl.vn/bocongan/Pages/vbpq-toanvan.aspx?ItemID=169709",
+    "content": "Chương I\nQUY ĐỊNH CHUNG\nĐiều 1. Phạm vi điều chỉnh\n1. Nghị định này quy định chi tiết một số điều của Luật Nhà ở số 27/2023/QH15, bao gồm:\na) Khoản 3 Điều 8 về giấy tờ chứng minh đối tượng và điều kiện được sở hữu nhà ở tại Việt Nam;\nb) Khoản 2 Điều 15 về khu vực tổ chức, cá nhân nước ngoài được sở hữu nhà ở;\nc) Khoản 3 Điều 19 về số lượng nhà ở mà tổ chức, cá nhân nước ngoài được sở hữu.",
+    "expect": {
+      "chapter": [
+        "I"
+      ],
+      "article": [
+        "1"
+      ],
+      "clause": [
+        "1"
+      ],
+      "point": [
+        "a",
+        "b",
+        "c"
+      ],
+      "forbid_clause": [
+        "2023"
+      ]
+    }
+  },
+  {
+    "id": "annex_2026_table_like_content",
+    "source_url": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/187535/VanBanGoc_36_2026_Q%C4%90-UBND_16-03-2026_%28DU%20THAO%20TRINH%20KY%29%20PHU%20LUC%20I%20DMKTKT%20MN.signed.pdf",
+    "content": "Phụ lục I\nĐỊNH MỨC KINH TẾ - KỸ THUẬT ĐỐI VỚI CƠ SỞ GIÁO DỤC MẦM NON\n(Ban hành kèm theo Quyết định số 36/2026/QĐ-UBND ngày 16 tháng 3 năm 2026)\nDịch vụ: Thực hiện Chương trình giáo dục mầm non.\nI. ĐỊNH MỨC LAO ĐỘNG\n1. Vùng thành thị\n1.1 Nhà trẻ\n2. Vùng nông thôn\n2.1 Nhà trẻ",
+    "expect": {
+      "annex": [],
+      "article": [],
+      "clause": [],
+      "point": [],
+      "annex_block": [
+        "I"
+      ],
+      "forbid_clause": [
+        "2026"
+      ]
+    }
+  },
+  {
+    "id": "vbpl_02_2025_tt_bct_fresh",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=175043",
+    "content": "CHƯƠNG I\nNHỮNG QUY ĐỊNH CHUNG\nĐiều 1. Phạm vi điều chỉnh\nThông tư này quy định chi tiết một số điều của Luật Điện lực, bao gồm khoản 4 và khoản 5 Điều 69, khoản 4 Điều 70, điểm d khoản 1 Điều 71.\nĐiều 2. Đối tượng áp dụng\nThông tư này áp dụng đối với:\n1. Đơn vị điện lực, bao gồm đơn vị phát điện, đơn vị truyền tải điện, đơn vị phân phối điện.",
+    "expect": {
+      "chapter": [
+        "I"
+      ],
+      "article": [
+        "1",
+        "2"
+      ],
+      "clause": [
+        "1"
+      ],
+      "min_cross_references": 1
+    }
+  },
+  {
+    "id": "vbpl_2025_no_space_after_article_dot_fresh",
+    "source_url": "https://vbpl.vn/boyte/Pages/vbpq-toanvan.aspx?ItemID=179202",
+    "content": "Chương I\nQUY ĐỊNH CHUNG\nĐiều 1.Phạm vi điều chỉnh và đối tượng áp dụng\n1. Thông tư này quy định chi tiết khoản 4 Điều 16, khoản 2 Điều 22, khoản 3 Điều 23.\n2. Các tổ chức, cá nhân trong nước và ngoài nước phải thực hiện theo các quy định tại Thông tư này.\nĐiều 2.Quy định chung về thành phần hồ sơ nhiệm vụ quy hoạch, quy hoạch đô thị và nông thôn\n1. Hồ sơ nhiệm vụ quy hoạch được phê duyệt là hồ sơ bằng bản giấy.",
+    "expect": {
+      "chapter": [
+        "I"
+      ],
+      "article": [
+        "1",
+        "2"
+      ],
+      "clause": [
+        "1",
+        "2",
+        "1"
+      ],
+      "min_cross_references": 1
+    }
+  },
+  {
+    "id": "vbpl_2025_transition_articles_fresh",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=184823",
+    "content": "Điều 2. Điều khoản chuyển tiếp\nSố lượng dự án dự thi tiếp tục thực hiện theo điểm a, điểm c khoản 2 Điều 5 Quy chế.\nĐiều 3. Điều khoản thi hành\n1. Thông tư này có hiệu lực thi hành từ ngày 28 tháng 11 năm 2025.\n2. Các cơ quan, tổ chức và cá nhân có liên quan chịu trách nhiệm thi hành Thông tư này.",
+    "expect": {
+      "article": [
+        "2",
+        "3"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "min_cross_references": 1
+    }
+  },
+  {
+    "id": "vbpl_002_2025_tt_bnv_quoted_amendment_fresh",
+    "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=176720",
+    "content": "Điều 1. Sửa đổi, bổ sung một số điều của Thông tư số 01/2025/TT-BNV\n1. Sửa đổi, bổ sung Điều 1 như sau:\n“Điều 1. Phạm vi điều chỉnh\nThông tư này hướng dẫn thực hiện chính sách, chế độ đối với cán bộ, công chức, viên chức.”\n2. Sửa đổi, bổ sung Điều 2 như sau:\n“Điều 2. Đối tượng áp dụng\nCán bộ, công chức, viên chức thuộc phạm vi áp dụng.”",
+    "expect": {
+      "article": [
+        "1"
+      ],
+      "clause": [
+        "1",
+        "2"
+      ],
+      "forbid_article": [
+        "2"
+      ],
+      "min_cross_references": 2
+    }
+  }
+]
