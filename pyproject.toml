@@ -31,6 +31,12 @@ docx = ["python-docx>=1.1"]
 all = ["pypdf>=5.0", "python-docx>=1.1"]
 dev = ["pytest>=8.0", "build>=1.2", "ruff>=0.7"]
 
+
+[project.urls]
+Homepage = "https://github.com/nguyenthanhasia/VNLegalParser"
+Repository = "https://github.com/nguyenthanhasia/VNLegalParser"
+Demo = "https://huggingface.co/spaces/nguyenthanhasia/VNLegalParser"
+
 [project.scripts]
 vlp = "vietnamese_legal_parser.cli:main"
 

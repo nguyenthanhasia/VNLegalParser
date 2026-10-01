@@ -2,6 +2,9 @@
 
 **Robust, deterministic parsing infrastructure for Vietnamese law.**
 
+**Live Demo:** [https://huggingface.co/spaces/nguyenthanhasia/VNLegalParser](https://huggingface.co/spaces/nguyenthanhasia/VNLegalParser)  
+**Source Code:** [https://github.com/nguyenthanhasia/VNLegalParser](https://github.com/nguyenthanhasia/VNLegalParser)
+
 A dependency-light parser for Vietnamese legal documents. It converts raw Vietnamese legal text into a hierarchical JSON tree suitable for search, RAG, citation, analytics, and downstream legal NLP.
 
 > Status: **beta / production-candidate**. The parser is designed to fail conservatively and emit diagnostics instead of silently inventing structure. No parser can guarantee perfect structure for every OCR/PDF extraction; use `parser.confidence` and `parser.diagnostics` in production. Confidence is a heuristic quality signal, not a calibrated probability of correctness.
